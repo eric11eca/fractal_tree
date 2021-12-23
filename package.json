@@ -1,0 +1,35 @@
+{
+  "name": "logictoolbox",
+  "version": "1.0.0",
+  "description": "Toolbox for computational logic",
+  "main": "index.js",
+  "repository": "https://github.com/eric11eca/AutomatonStudio.git",
+  "directories": {
+    "app": "app",
+    "views": "views",
+    "public": "public",
+    "lib": "public/lib",
+    "js": "public/js",
+    "assets": "public/assests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "start-desk": "electron .",
+    "package-windows": "electron-packager . logictoolbox --overwrite --platform=win32 --arch=ia32 --icon=assets/icons/logic.ico --prune=true --out=release-builds --version-string.CompanyName=RHIT --version-string.FileDescription=CE --version-string.ProductName=\"Computational Logic Toolbox\"",
+    "package-mac": "electron-packager . logictoolbox --overwrite --platform=darwin --arch=x64 --icon=assets/icons/logic.icns --prune=true --out=release-builds",
+    "package-linux": "electron-packager . logictoolbox --overwrite --platform=linux --arch=x64 --icon=assets/img/logic1.png --prune=true --out=release-builds",
+    "installer-windows": "node release-builds/windows_installer.js",
+    "installer-mac": "electron-installer-dmg ./release-builds/logictoolbox-darwin-x64/logictoolbox.app logictoolbox --out=release-builds --overwrite --icon=assets/icons/logic.icns"
+  },
+  "keywords": [
+    "logic"
+  ],
+  "author": "Zeming Chen",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "firebase": "^9.6.1"
+  }
+}
